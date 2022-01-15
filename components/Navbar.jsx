@@ -1,57 +1,32 @@
-import NextLink from "next/link";
-import userData from "../constants/data";
-import socialLinks from "../constants/socialLinks";
-import useDarkMode from "../utils/useDarkMode";
-import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import NextLink from 'next/link';
+import { useState, useEffect } from 'react';
+import userData from '../constants/data';
+import socialLinks from '../constants/socialLinks';
+import useDarkMode from '../utils/useDarkMode';
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
-const user = {
-  name: "Tom Cook",
-  href: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
-  imageUrl:
-    "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/daaa9c57-4d5e-4fc8-838b-d33f1d5485f3/d5dssok-7d6e89d2-4a6d-4591-8801-a76e0e5dacf2.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RhYWE5YzU3LTRkNWUtNGZjOC04MzhiLWQzM2YxZDU0ODVmM1wvZDVkc3Nvay03ZDZlODlkMi00YTZkLTQ1OTEtODgwMS1hNzZlMGU1ZGFjZjIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.HzAA0oPlvdu2NyEUSpJ4cJrjgQbqXEXqNZzTuWpBdyA",
-};
-// const socialLinks = [
-//   {
-//     name: "Facebook",
-//     href: "https://www.facebook.com/FxIxFxA/",
-//     link: "https://img.icons8.com/fluency/50/000000/facebook-new.png",
-//   },
-//   {
-//     name: "Twitter",
-//     href: "https://twitter.com/l__fifa__l",
-//     link: "https://img.icons8.com/fluency/48/000000/twitter.png",
-//   },
-//   {
-//     name: "Instagram",
-//     href: "https://www.instagram.com/l_fifa_l/",
-//     link: "https://img.icons8.com/fluency/48/000000/instagram-new.png",
-//   },
-//   {
-//     name: "LinkedIn",
-//     href: "#",
-//     link: "https://img.icons8.com/fluency/48/000000/linkedin.png",
-//   },
-//   {
-//     name: "Mail",
-//     href: "mailto:starktestic@gmail.com",
-//     link: "https://img.icons8.com/fluency/48/000000/email-sign.png",
-//   },
-// ];
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About", href: "/about", current: false },
-  { name: "Projects", href: "/projects", current: false },
-  { name: "Experience", href: "/experience", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: 'Home', href: '/', current: false },
+  { name: 'About', href: '/about', current: false },
+  { name: 'Projects', href: '/projects', current: false },
+  { name: 'Experience', href: '/experience', current: false },
+  // { name: 'Contact', href: '/contact', current: false },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
   const [colorTheme, setTheme] = useDarkMode();
+  let [current, setCurrent] = useState('');
+
+  useEffect(() => {
+    current = window.location.pathname;
+    console.log(current);
+    process.browser && setCurrent(window.location.pathname);
+  }, [process.browser && window.location.pathname]);
 
   return (
     <Disclosure as="nav" className="bg-white dark:bg-gray-800">
@@ -76,18 +51,22 @@ export default function Navbar() {
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
-                      <NextLink href={item.href}>
-                        <a
-                          key={item.name}
-                          className={classNames(
-                            item.current
-                              ? "dark:bg-gray-900 dark:text-white bg-gray-300 text-gray-900"
-                              : "dark:text-gray-300 text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-400 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
-                          )}
-                        >
-                          {item.name}
-                        </a>
+                      <NextLink key={item.name} href={item.href}>
+                        {
+                          <a
+                            key={item.name}
+                            className={classNames(
+                              current === item.href
+                                ? (item.current = true
+                                    ? 'bg-gray-900 text-white'
+                                    : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium')
+                                : 'text-gray-600 hover:bg-gray-700 hover:text-white',
+                              'px-3 py-2 rounded-md text-sm font-medium'
+                            )}
+                          >
+                            {item.name}
+                          </a>
+                        }
                       </NextLink>
                     ))}
                   </div>
@@ -104,9 +83,9 @@ export default function Navbar() {
                     >
                       <span className="sr-only">Dark Mode</span>
 
-                      {colorTheme === "light" ? (
+                      {colorTheme === 'light' ? (
                         <svg
-                          onClick={() => setTheme("light")}
+                          onClick={() => setTheme('light')}
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-6 w-6"
                           fill="none"
@@ -122,7 +101,7 @@ export default function Navbar() {
                         </svg>
                       ) : (
                         <svg
-                          onClick={() => setTheme("dark")}
+                          onClick={() => setTheme('dark')}
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-6 w-6"
                           fill="none"
@@ -167,9 +146,9 @@ export default function Navbar() {
                   type="button"
                   className="dark:bg-gray-800 bg-white dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-black dark:hover:bg-gray-700 hover:bg-gray-400 focus:ring-offset-2 dark:focus:ring-white flex-shrink-0 p-1 mr-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  {colorTheme === "light" ? (
+                  {colorTheme === 'light' ? (
                     <svg
-                      onClick={() => setTheme("light")}
+                      onClick={() => setTheme('light')}
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
                       fill="none"
@@ -185,7 +164,7 @@ export default function Navbar() {
                     </svg>
                   ) : (
                     <svg
-                      onClick={() => setTheme("dark")}
+                      onClick={() => setTheme('dark')}
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
                       fill="none"
@@ -219,19 +198,23 @@ export default function Navbar() {
           <Disclosure.Panel className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navigation.map((item) => (
-                <Disclosure.Button
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  <NextLink href={item.href} key={item.name}>
-                    <a>{item.name}</a>
-                  </NextLink>
-                </Disclosure.Button>
+                <NextLink key={item.name} href={item.href}>
+                  {
+                    <a
+                      key={item.name}
+                      className={classNames(
+                        current === item.href
+                          ? (item.current = true
+                              ? 'bg-gray-900 text-white'
+                              : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium')
+                          : 'text-gray-600 hover:bg-gray-700 hover:text-white',
+                        'px-3 py-2 rounded-md text-sm font-medium'
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  }
+                </NextLink>
               ))}
             </div>
             <div className="pt-4 pb-3 border-t border-gray-700">
@@ -244,7 +227,7 @@ export default function Navbar() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="bg-gray-800 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                        className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
                       >
                         <img
                           className="h-8 w-8"

@@ -1,6 +1,4 @@
-import userData from "../constants/data";
-
-//images.unsplash.com/photo-1513346940221-6f673d962e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+import userData from '../constants/data';
 
 export default function Home() {
   return (
@@ -18,7 +16,8 @@ export default function Home() {
                 Hi, I&#x27;m Vivek 🤘
               </p>
               <h2 className="max-w-3xl text-5xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
-                Building digital products, brands, and experiences.(FULL STACK DEVLOPER)
+                Building digital products, brands, and experiences.I'm a FULL
+                STACK MERN DEVLOPER
               </h2>
               <div className="flex items-center justify-center mt-4">
                 <a

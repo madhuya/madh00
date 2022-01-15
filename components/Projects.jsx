@@ -1,5 +1,5 @@
-import React from "react";
-import Project from "./micro/Project";
+import React from 'react';
+import Project from './micro/Project';
 
 export default function projects() {
   return (
@@ -9,7 +9,6 @@ export default function projects() {
           Projects.
         </h1>
       </div>
-      <Project />
       <Project />
     </section>
   );

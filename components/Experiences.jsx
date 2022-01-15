@@ -1,5 +1,5 @@
-import React from "react";
-import Timeline from "./micro/Timeline";
+import React from 'react';
+import Timeline from './micro/Timeline';
 
 export default function experience() {
   return (
@@ -9,7 +9,14 @@ export default function experience() {
           Expriences.
         </h1>
       </div>
-      <Timeline />
+      <div className="bg-[#F1F1F1] -mt-10 dark:bg-gray-900 ">
+        <div className="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
+          <h2 className="text-2xl dark:text-white font-bold md:text-4xl">
+            Timeline
+          </h2>
+          <Timeline />
+        </div>
+      </div>
     </section>
   );
 }

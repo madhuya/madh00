@@ -1,8 +1,8 @@
-import React from "react";
-import NextLink from "next/link";
-import userData from "../../constants/data";
-import socialLinks from "../../constants/socialLinks";
-import techStack from "../../constants/techStack";
+import React from 'react';
+import NextLink from 'next/link';
+import userData from '../../constants/data';
+import socialLinks from '../../constants/socialLinks';
+import techStack from '../../constants/techStack';
 
 export default function About() {
   return (
@@ -11,9 +11,9 @@ export default function About() {
         <div className="text-container max-w-6xl mx-auto pt-20">
           <p
             className="leading-loose text-2xl dark:text-gray-100 md:text-4xl font-semibold  mx-4"
-            style={{ lineHeight: "3rem" }}
+            style={{ lineHeight: '3rem' }}
           >
-            {userData.about.title}. Currently working on{" "}
+            {userData.about.title}. Currently working on{' '}
             <a
               className="bg-red-500 rounded-md px-2 py-1 text-white"
               href={userData.about.currentProjectUrl}
@@ -32,13 +32,13 @@ export default function About() {
                 Contact
               </h1>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                For any sort help / enquiry, shoot a{" "}
+                For any sort help / enquiry, shoot a{' '}
                 <a
                   href={`mailto:${userData.email}`}
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
                 >
                   mail
-                </a>{" "}
+                </a>{' '}
                 and I'll get back. I swear.
               </p>
             </div>
@@ -48,14 +48,14 @@ export default function About() {
               </h1>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
                 I'm looking for a job currently, If you see me as a good fit,
-                check my{" "}
+                check my{' '}
                 <a
                   href={userData.resumeUrl}
                   target="__blank"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
                 >
-                  CV
-                </a>{" "}
+                  resume
+                </a>{' '}
                 and I'd love to work for you.
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function About() {
                       href={item.link}
                       className="flex flex-row items-center space-x-4 group"
                     >
-                      <div className="my-4">&rarr;</div>
+                      <div className="my-4 dark:text-gray-300">&rarr;</div>
                       <img
                         className="h-8 w-8"
                         aria-hidden="true"
