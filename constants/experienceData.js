@@ -11,7 +11,7 @@ const experience = [
     company: 'YouCert',
     year: '2021, August',
     companyLink: '#',
-    desc: 'Learn for free and get certified for free.',
+    desc: 'Learn and get certified for free.',
   },
   {
     title: 'Internship',

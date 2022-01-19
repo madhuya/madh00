@@ -1,17 +1,16 @@
-import React from "react";
-import Head from "next/head";
-import { useRouter } from "next/router";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import React from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Navbar from './Navbar';
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
 
   const meta = {
-    title: "Vivek Kumar - Developer, Entrepreneur, Creator and Memer",
+    title: 'Vivek Kumar - Developer, Entrepreneur, Creator and Memer',
     description: `I develope Websites, Mobile Apps. Get in touch with me to know more.`,
-    image: "/avatar.jpg",
-    type: "website",
+    image: '/avatar.jpg',
+    type: 'website',
     ...customMeta,
   };
   return (
@@ -20,6 +19,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
+        <link rel="shortcut icon" href="/me.svg" />
         {/* <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Manu Arora" />
         <meta property="og:description" content={meta.description} />
