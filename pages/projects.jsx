@@ -1,5 +1,5 @@
-import Container from "../components/Container";
-import Project from "../components/projects";
+import Container from '../components/Container';
+import Projects from '../components/projects';
 
 export default function ProjectPage() {
   return (
@@ -8,7 +8,7 @@ export default function ProjectPage() {
       description="I develope Websites, Mobile Apps. Get in touch with me to know more."
     >
       <div className="justify-center">
-        <Project />
+        <Projects />
       </div>
     </Container>
   );
