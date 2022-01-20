@@ -54,7 +54,6 @@ export default function Navbar() {
                       <NextLink key={item.name} href={item.href}>
                         {
                           <a
-                            key={item.name}
                             className={classNames(
                               current === item.href
                                 ? (item.current = true
@@ -121,10 +120,9 @@ export default function Navbar() {
                   <div className="flex">
                     {/* Social Media Links */}
                     {socialLinks.map((item) => (
-                      <NextLink href={item.href}>
+                      <NextLink key={item.name} href={item.href}>
                         <a as="a" className="p-1 items-center">
                           <button
-                            key={item.name}
                             as="a"
                             className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
                           >

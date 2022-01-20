@@ -5,7 +5,7 @@ export default function Timeline() {
   return (
     <div className="space-y-8 dark:text-white">
       {experience.map((item) => (
-        <div>
+        <div key={item.title}>
           <h3 className="mb-3 text-lg font-bold md:text-xl">{item.year}</h3>
           <ul className="space-y-4">
             <li className="space-y-1">

@@ -5,7 +5,10 @@ export default function Project() {
   return (
     <div>
       {projects.map((item) => (
-        <div className="bg-[#F1F1F1] -mt-10 dark:bg-gray-900 py-12 justify-center">
+        <div
+          key={item.desc}
+          className="bg-[#F1F1F1] -mt-10 dark:bg-gray-900 py-12 justify-center"
+        >
           <div className="bg-white dark:bg-gray-800 mx-auto lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
             <div className="lg:w-1/2">
               <div
