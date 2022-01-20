@@ -121,7 +121,7 @@ export default function Navbar() {
                   <div className="flex">
                     {/* Social Media Links */}
                     {socialLinks.map((item) => (
-                      <NextLink href={item.href}>
+                      <NextLink key={item.name} href={item.href}>
                         <a as="a" key={item.name} className="p-1 items-center">
                           <button
                             key={item.name}
