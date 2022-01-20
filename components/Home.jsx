@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <section>
       <div className="flex-1 text-center dark:bg-gray-800 font-mono bg-white relative">
-        <div className="flex relative w-full h-screen items-center">
-          <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
+        <div className="flex relative pt-20 items-center">
+          <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-2">
             <div className="flex flex-col">
               <img
                 className="w-28 mx-auto rounded-full"
