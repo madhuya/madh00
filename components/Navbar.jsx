@@ -122,7 +122,7 @@ export default function Navbar() {
                     {/* Social Media Links */}
                     {socialLinks.map((item) => (
                       <NextLink href={item.href}>
-                        <a as="a" className="p-1 items-center">
+                        <a as="a" key={item.name} className="p-1 items-center">
                           <button
                             key={item.name}
                             as="a"
