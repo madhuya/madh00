@@ -219,7 +219,7 @@ export default function Navbar() {
               <div className="flex items-center justify-around pl-8 pr-8">
                 {/* Navigation Mobile Social Media Links */}
                 {socialLinks.map((item) => (
-                  <NextLink href={item.href}>
+                  <NextLink key={item.name} href={item.href}>
                     <a as="a" className="p-1 items-center">
                       <button
                         key={item.name}
