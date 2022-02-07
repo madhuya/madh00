@@ -1,8 +1,15 @@
 const experience = [
   {
+    title: 'Raact Developer Intern',
+    company: 'Whatcode.in',
+    year: '2022, february',
+    companyLink: 'https://www.whatcode.in/',
+    desc: 'Developing awsome react components for the company & helping the team to grow.',
+  },
+  {
     title: 'Founder and Developer',
     company: 'Flikc',
-    year: '2022, Fabuarary',
+    year: '2022, february',
     companyLink: 'https://tailwindmasterkit.com',
     desc: 'Make meme with our memeInator and share theme with your friends',
   },
