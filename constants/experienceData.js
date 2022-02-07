@@ -1,6 +1,6 @@
 const experience = [
   {
-    title: 'Raact Developer Intern',
+    title: 'React Developer Intern',
     company: 'Whatcode.in',
     year: '2022, february',
     companyLink: 'https://www.whatcode.in/',
@@ -38,12 +38,14 @@ const experience = [
     title: 'Graduation',
     company: 'Dr. A.P.J. Abdul Kalam Technical University, Lucknow.',
     year: 'Will be graduating in the future (2022)',
+    companyLink: '#',
     desc: 'Major in Computer Science and Engineering with a CGPA of 7.0.',
   },
   {
     title: 'School',
     company: 'Army Public School, Devlali.',
     year: '2018',
+    companyLink: '#',
     desc: 'Subjects being PCM - I barely survived ',
   },
 ];
