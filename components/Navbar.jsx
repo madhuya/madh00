@@ -54,7 +54,6 @@ export default function Navbar() {
                       <NextLink key={item.href} href={item.href}>
                         {
                           <a
-                            target="__blank"
                             key={item.name}
                             className={classNames(
                               current === item.href
