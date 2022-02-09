@@ -65,7 +65,7 @@ export default function About() {
             </h1>
             <div className="mt-4 ml-4">
               {socialLinks.map((item) => (
-                <NextLink key={item.name} href={item.href}>
+                <NextLink target="__blank" key={item.name} href={item.href}>
                   <div className="flex flex-row justify-start items-center ">
                     <a
                       target="__blank"
