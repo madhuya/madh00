@@ -123,10 +123,14 @@ export default function Navbar() {
                     {/* Social Media Links */}
                     {socialLinks.map((item) => (
                       <NextLink key={item.name} href={item.href}>
-                        <a as="a" key={item.name} className="p-1 items-center">
+                        <a
+                          as="a"
+                          target="__blank"
+                          key={item.name}
+                          className="p-1 items-center"
+                        >
                           <button
                             key={item.name}
-                            target="__blank"
                             as="a"
                             className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
                           >
@@ -224,10 +228,9 @@ export default function Navbar() {
                 {/* Navigation Mobile Social Media Links */}
                 {socialLinks.map((item) => (
                   <NextLink href={item.href}>
-                    <a as="a" className="p-1 items-center">
+                    <a as="a" target="__blank" className="p-1 items-center">
                       <button
                         key={item.name}
-                        target="__blank"
                         as="a"
                         href={item.href}
                         className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
