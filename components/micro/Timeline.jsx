@@ -23,7 +23,9 @@ export default function Timeline() {
                   {'  '}
                   <span className="text-indigo-600 dark:text-indigo-400">
                     {' @ '}
-                    <a href={item.companyLink}>{item.company}</a>
+                    <a target="__blank" href={item.companyLink}>
+                      {item.company}
+                    </a>
                   </span>
                 </h4>
               </div>

@@ -26,6 +26,7 @@ export default function Project() {
 
               <div className="mt-8">
                 <a
+                  target="__blank"
                   href={item.link}
                   className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-700"
                 >

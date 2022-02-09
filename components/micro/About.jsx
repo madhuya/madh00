@@ -68,6 +68,7 @@ export default function About() {
                 <NextLink key={item.name} href={item.href}>
                   <div className="flex flex-row justify-start items-center ">
                     <a
+                      target="__blank"
                       href={item.link}
                       className="flex flex-row items-center space-x-4 group"
                     >
