@@ -34,7 +34,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )} */}
       </Head>
-      <main className="bg-radial-at-t from-amber-700 via-orange-300 to-rose-800 dark:bg-gray-800 w-full h-screen">
+      <main className="dark:bg-gray-800 w-full h-screen">
         <Navbar />
         <div>{children}</div>
       </main>

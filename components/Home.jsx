@@ -3,7 +3,7 @@ import userData from '../constants/data';
 export default function Home() {
   return (
     <section>
-      <div className="flex-1 text-center dark:bg-gray-800 font-mono bg-white relative">
+      <div className="flex-1 text-center dark:bg-gray-800 font-mono bg-radial-at-t from-amber-700 via-orange-300 to-rose-800  relative">
         <div className="flex relative pt-20 items-center">
           <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-2">
             <div className="flex flex-col">
