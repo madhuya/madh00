@@ -4,7 +4,7 @@ import Contact from '../components/Contact';
 export default function ContactPage() {
   return (
     <Container
-      title="Vivek Kumar - Developer, Entrepreneur and Memer"
+      title="Contact - Vivek Kumar"
       description="I develope Websites, Mobile Apps. Get in touch with me to know more."
     >
       <Contact />

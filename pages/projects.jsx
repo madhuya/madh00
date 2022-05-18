@@ -4,7 +4,7 @@ import Project from '../components/Projects';
 export default function ProjectPage() {
   return (
     <Container
-      title="Vivek Kumar - Developer, Entrepreneur and Memer"
+      title="Projects - Vivek Kumar"
       description="I develope Websites, Mobile Apps. Get in touch with me to know more."
     >
       <div className="justify-center">
