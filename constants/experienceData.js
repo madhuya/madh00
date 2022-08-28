@@ -39,7 +39,7 @@ const experience = [
     company: 'Dr. A.P.J. Abdul Kalam Technical University, Lucknow.',
     year: 'Will be graduating in the future (2022)',
     companyLink: '',
-    desc: 'Major in Computer Science and Engineering with a CGPA of 7.0.',
+    desc: 'Major in Computer Science and Engineering with a CGPA of 7.4.',
   },
   {
     title: 'School',
