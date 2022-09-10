@@ -1,6 +1,6 @@
 const experience = [
   {
-    title: 'React Developer Intern',
+    title: 'Web Developer Intern',
     company: 'Whatcode.in',
     year: '2022, february',
     companyLink: 'https://www.whatcode.in/',
