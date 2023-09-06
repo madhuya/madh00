@@ -14,8 +14,8 @@ const userData = {
       `I've been coding in React, Node.js, Express, MongoDB, Bootstrap, Tailwind, C, C++, Rust, Although I barely know the syntax (Psst, Stack overflow!).`,
       `I also have worked with Machine Learning and Deep Learning. Now i'm learning blockchain (DAPPs) development.`,
     ],
-    currentProject: 'Youcert',
-    currentProjectUrl: 'https://github.com/l-fifa-l/OPenEd',
+    currentProject: 'Grinler',
+    currentProjectUrl: 'www.grinler.com',
   },
   resumeUrl: '#',
 };
