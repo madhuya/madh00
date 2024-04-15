@@ -50,11 +50,11 @@ export default function Navbar() {
                 {/* Navigation Destop */}
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
-                    {navigation.map((item) => (
-                      <NextLink key={item.href} href={item.href}>
+                    {navigation.map((item, idx) => (
+                      <NextLink key={idx} href={item.href}>
                         {
                           <a
-                            key={item.name}
+                            key={idx}
                             className={classNames(
                               current === item.href
                                 ? (item.current = true
