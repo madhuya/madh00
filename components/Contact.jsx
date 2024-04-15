@@ -2,7 +2,7 @@ import React from "react";
 import Contact from "./micro/Contact";
 import ContactMe from "./micro/ContactMe";
 
-export default function aboutt() {
+export default function about() {
   return (
     <section className=" bg-white h-full dark:bg-gray-800 jus">
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
