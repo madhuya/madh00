@@ -3,6 +3,7 @@ const userData = {
   name: 'Vivek Kumar',
   avatar: 'https://avatars.githubusercontent.com/u/41392917',
   githubUsername: 'l-fifa-l',
+  linkedInUrl: 'https://www.linkedin.com/in/fifa/',
   designation: 'Full-Stack Developer',
   email: 'starktestic@gmail.com',
   phone: '+91 9049872675',
