@@ -1,26 +1,27 @@
-import NextLink from 'next/link';
-import { useState, useEffect } from 'react';
-import userData from '../constants/data';
-import socialLinks from '../constants/socialLinks';
-import useDarkMode from '../utils/useDarkMode';
-import { Disclosure } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import NextLink from "next/link";
+import { useState, useEffect } from "react";
+import userData from "../constants/data";
+import socialLinks from "../constants/socialLinks";
+import useDarkMode from "../utils/useDarkMode";
+import { Disclosure } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'About', href: '/about', current: false },
-  { name: 'Projects', href: '/projects', current: false },
-  { name: 'Experience', href: '/experience', current: false },
+  { name: "Home", href: "/", current: false },
+  { name: "About", href: "/about", current: false },
+  { name: "Projects", href: "/projects", current: false },
+  { name: "Experience", href: "/experience", current: false },
   // { name: 'Contact', href: '/contact', current: false },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
   const [colorTheme, setTheme] = useDarkMode();
-  let [current, setCurrent] = useState('');
+  let [current, setCurrent] = useState("");
 
   useEffect(() => {
     current = window.location.pathname;
@@ -36,40 +37,35 @@ export default function Navbar() {
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="flex-shrink-0 ">
-                  <NextLink href="/">
-                    <a className="items-center flex justify-between space-x-3 dark:text-white text-black text-lg font-medium">
-                      <img
-                        className="h-12 w-12 rounded-full"
-                        src={userData.avatar}
-                        alt=""
-                      />
-                      <h1>{userData.name}</h1>
-                    </a>
-                  </NextLink>
+                  <Link
+                    href="/"
+                    className="items-center flex justify-between space-x-3 dark:text-white text-black text-lg font-medium"
+                  >
+                    <img
+                      className="h-12 w-12 rounded-full"
+                      src={userData.avatar}
+                      alt=""
+                    />
+                    <h1>{userData.name}</h1>
+                  </Link>
                 </div>
-                {/* Navigation Destop */}
-                <div className="hidden md:block">
-                  <div className="ml-10 flex items-baseline space-x-4">
-                    {navigation.map((item, idx) => (
-                      <NextLink key={idx} href={item.href}>
-                        {
-                          <a
-                            key={idx}
-                            className={classNames(
-                              current === item.href
-                                ? (item.current = true
-                                    ? 'bg-gray-900 text-white'
-                                    : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium')
-                                : 'text-gray-600 hover:bg-gray-700 hover:text-white',
-                              'px-3 py-2 rounded-md text-sm font-medium'
-                            )}
-                          >
-                            {item.name}
-                          </a>
-                        }
-                      </NextLink>
-                    ))}
-                  </div>
+                <div className="hidden md:block ml-10  items-baseline space-x-4">
+                  {navigation.map((item, idx) => (
+                    <Link
+                      key={idx} // Ensure each key is unique, you're currently using the index
+                      href={item.href}
+                      className={classNames(
+                        current === item.href
+                          ? (item.current = true
+                              ? "bg-gray-900 text-white"
+                              : "text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium")
+                          : "text-gray-600 hover:bg-gray-700 hover:text-white",
+                        "px-3 py-2 rounded-md text-sm font-medium"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
               {/* Dark mode and social Links */}
@@ -83,9 +79,9 @@ export default function Navbar() {
                     >
                       <span className="sr-only">Dark Mode</span>
 
-                      {colorTheme === 'light' ? (
+                      {colorTheme === "light" ? (
                         <svg
-                          onClick={() => setTheme('light')}
+                          onClick={() => setTheme("light")}
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-6 w-6"
                           fill="none"
@@ -101,7 +97,7 @@ export default function Navbar() {
                         </svg>
                       ) : (
                         <svg
-                          onClick={() => setTheme('dark')}
+                          onClick={() => setTheme("dark")}
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-6 w-6"
                           fill="none"
@@ -120,27 +116,26 @@ export default function Navbar() {
                   </div>
                   <div className="flex">
                     {/* Social Media Links */}
-                    {socialLinks.map((item) => (
-                      <NextLink key={item.name} href={item.href}>
-                        <a
-                          as="a"
-                          target="__blank"
+                    {socialLinks.map((item, idx) => (
+                      <Link
+                        as="a"
+                        href={item.href}
+                        target="__blank"
+                        key={idx}
+                        className="p-1 items-center"
+                      >
+                        <button
                           key={item.name}
-                          className="p-1 items-center"
+                          as="a"
+                          className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
                         >
-                          <button
-                            key={item.name}
-                            as="a"
-                            className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
-                          >
-                            <img
-                              className="h-8 w-8"
-                              aria-hidden="true"
-                              src={item.link}
-                            />
-                          </button>
-                        </a>
-                      </NextLink>
+                          <img
+                            className="h-8 w-8"
+                            aria-hidden="true"
+                            src={item.link}
+                          />
+                        </button>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -151,9 +146,9 @@ export default function Navbar() {
                   type="button"
                   className="dark:bg-gray-800 bg-white dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-black dark:hover:bg-gray-700 hover:bg-gray-400 focus:ring-offset-2 dark:focus:ring-white flex-shrink-0 p-1 mr-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  {colorTheme === 'light' ? (
+                  {colorTheme === "light" ? (
                     <svg
-                      onClick={() => setTheme('light')}
+                      onClick={() => setTheme("light")}
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
                       fill="none"
@@ -169,7 +164,7 @@ export default function Navbar() {
                     </svg>
                   ) : (
                     <svg
-                      onClick={() => setTheme('dark')}
+                      onClick={() => setTheme("dark")}
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
                       fill="none"
@@ -203,45 +198,45 @@ export default function Navbar() {
           <Disclosure.Panel className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navigation.map((item) => (
-                <NextLink key={item.name} href={item.href}>
-                  {
-                    <a
-                      key={item.name}
-                      className={classNames(
-                        current === item.href
-                          ? (item.current = true
-                              ? 'bg-gray-900 text-white'
-                              : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium')
-                          : 'text-gray-600 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
-                      )}
-                    >
-                      {item.name}
-                    </a>
-                  }
-                </NextLink>
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={classNames(
+                    current === item.href
+                      ? (item.current = true
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium")
+                      : "text-gray-600 hover:bg-gray-700 hover:text-white",
+                    "px-3 py-2 rounded-md text-sm font-medium"
+                  )}
+                >
+                  {item.name}
+                </Link>
               ))}
             </div>
             <div className="pt-4 pb-3 border-t border-gray-700">
               <div className="flex items-center justify-around pl-8 pr-8">
                 {/* Navigation Mobile Social Media Links */}
                 {socialLinks.map((item) => (
-                  <NextLink href={item.href}>
-                    <a as="a" target="__blank" className="p-1 items-center">
-                      <button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
-                      >
-                        <img
-                          className="h-8 w-8"
-                          aria-hidden="true"
-                          src={item.link}
-                        />
-                      </button>
-                    </a>
-                  </NextLink>
+                  <Link
+                    href={item.href}
+                    as="a"
+                    target="__blank"
+                    className="p-1 items-center"
+                  >
+                    <button
+                      key={item.name}
+                      as="a"
+                      href={item.href}
+                      className="dark:bg-gray-800 bg-white p-1 rounded-full dark:text-gray-400 text-gray-600  dark:hover:text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-white "
+                    >
+                      <img
+                        className="h-8 w-8"
+                        aria-hidden="true"
+                        src={item.link}
+                      />
+                    </button>
+                  </Link>
                 ))}
               </div>
             </div>
