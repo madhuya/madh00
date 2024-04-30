@@ -118,7 +118,6 @@ export default function Navbar() {
                     {/* Social Media Links */}
                     {socialLinks.map((item, idx) => (
                       <Link
-                        as="a"
                         href={item.href}
                         target="__blank"
                         key={idx}
@@ -220,7 +219,7 @@ export default function Navbar() {
                 {socialLinks.map((item) => (
                   <Link
                     href={item.href}
-                    as="a"
+                    
                     target="__blank"
                     className="p-1 items-center"
                   >

@@ -1,5 +1,5 @@
 import React from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import userData from '../../constants/data';
 import socialLinks from '../../constants/socialLinks';
 import techStack from '../../constants/techStack';
@@ -65,10 +65,10 @@ export default function About() {
             </h1>
             <div className="mt-4 ml-4">
               {socialLinks.map((item) => (
-                <NextLink target="__blank" key={item.name} href={item.href}>
+                <Link target="__blank" key={item.name} href={item.href}>
                   <div className="flex flex-row justify-start items-center ">
                     <a
-                      href={item.link}
+                      href={item.href}
                       target="__blank"
                       className="flex flex-row items-center space-x-4 group"
                     >
@@ -84,7 +84,7 @@ export default function About() {
                       </p>
                     </a>
                   </div>
-                </NextLink>
+                </Link>
               ))}
             </div>
           </div>
