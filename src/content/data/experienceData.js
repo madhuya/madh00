@@ -1,5 +1,12 @@
 const experience = [
   {
+    title: 'Product Manager',
+    company: 'Google',
+    year: '2024',
+    companyLink: 'https://www.google.com/',
+    desc: 'Making Products at Google better.',
+  },
+  {
     title: 'Founder/CTO',
     company: 'Grinler',
     year: '2022',

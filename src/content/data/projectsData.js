@@ -4,6 +4,7 @@ const projects = [
   //   link: 'repo github link',
   //   desc: 'repo description',
   //   imgUrl: 'repo related image',
+  //   tags:['tag1', 'tag2']
   // }
   {
     title: 'Youcert',
@@ -11,6 +12,7 @@ const projects = [
     desc: 'A service that helps you to learn and get certified for free. Currently in development',
     imgUrl:
       'https://images.unsplash.com/photo-1613826488066-5a115a53a1fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=853&q=80',
+      
   },
   {
     title: 'Blockchain',
