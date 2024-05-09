@@ -1,4 +1,5 @@
 import "@styles/globals.css";
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@lib/utils"
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     
     <html lang="en" suppressHydrationWarning={true}>
+      <Analytics/>
       <head>
       <link rel="icon" href="http://localhost:3000/favicon.ico" sizes="any" />
       </head>
