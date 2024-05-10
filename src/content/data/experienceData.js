@@ -9,9 +9,16 @@ const experience = [
   {
     title: 'Founder/CTO',
     company: 'Grinler',
-    year: '2022',
+    year: '2023',
     companyLink: 'https://www.grinler.com/',
     desc: 'Make memes and share theme with your friends',
+  },
+  {
+    title: 'Google Developer Group Co-Lead',
+    company: 'Google Developer Group',
+    year: '2021',
+    companyLink: '',
+    desc: 'Managing event Students ',
   },
   {
     title: 'Web Developer Intern',
@@ -25,14 +32,14 @@ const experience = [
     company: 'Dr. A.P.J. Abdul Kalam Technical University, Lucknow.',
     year: '2022',
     companyLink: '',
-    desc: 'Major in Computer Science and Engineering with a CGPA of 7.4.',
+    desc: 'Major in Computer Science and Engineering',
   },
   {
-    title: 'Developer',
-    company: 'YouCert',
+    title: 'Tensorflow User Group Co-Lead',
+    company: 'Tensorflow',
     year: '2021',
     companyLink: '',
-    desc: 'Learn and get certified for free.',
+    desc: 'Managing event Students ',
   },
   {
     title: 'Data Engineer Intern',
