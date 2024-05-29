@@ -17,19 +17,19 @@ const techStack = [
   },
   {
     name: "SQL",
-    iconUrl: "https://img.icons8.com/color/96/000000/nodejs.png",
+    iconUrl: "https://img.icons8.com/color/48/sql.png",
   },
   {
     name: "Pandas",
-    iconUrl: "https://icons8.com/icon/xSkewUSqtErH/pandas",
+    iconUrl: "https://img.icons8.com/color/48/pandas.png",
   },
   {
     name: "Numpy",
-    iconUrl: "https://icons8.com/icon/aR9CXyMagKIS/numpy",
+    iconUrl: "https://img.icons8.com/color/48/numpy.png",
   },
   {
     name: "Statisitcs",
-    iconUrl: "https://icons8.com/icon/m5UjiK9ez3uu/presentation",
+    iconUrl: "https://img.icons8.com/dusk/48/numbers.png",
   },
 ];
 
