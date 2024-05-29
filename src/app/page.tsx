@@ -18,7 +18,7 @@ export default function Home() {
                 Hi, I'm {userData.firstName} 🤘
               </p>
               <h2 className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto text-center py-2">
-                Building digital products, brands, and experiences.
+                {userData.tagline}
               </h2>
               <div className="flex items-center justify-center mt-4">
                 <a

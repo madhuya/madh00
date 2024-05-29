@@ -7,9 +7,8 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
 
   const meta = {
-    title: 'Vivek Kumar - Developer, Entrepreneur, Creator and Memer',
+    title: 'Madhu Yadav - Developer, Entrepreneur, Creator and Memer',
     description: `I develope Websites, Mobile Apps. Get in touch with me to know more.`,
-    image: '/avatar.jpg',
     type: 'website',
     ...customMeta,
   };

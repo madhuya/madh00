@@ -51,9 +51,8 @@ function Header() {
     <div className="flex justify-between items-center w-full">
       <Link href="/" className="flex items-center">
         <ProfileIcon src={userData.avatar} />
-        <span className="sr-only">Vivek Kumar</span>
-        <span className="text-lg font-medium text-gray-900 dark:text-gray-100 ml-3">
-          VIVEK KUMAR
+        <span className="sr-only">{userData.name}</span>
+        <span className="text-lg font-medium text-gray-900 dark:text-gray-100 ml-3">{userData.name}
         </span>
       </Link>
     </div>

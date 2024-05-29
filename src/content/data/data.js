@@ -2,6 +2,7 @@ const userData = {
   firstName: "Madhu",
   name: "Madhu Yadav",
   avatar: "https://avatars.githubusercontent.com/u/93859956",
+  tagline:"",
   githubUsername: "madhuya",
   linkedInUrl: "https://www.linkedin.com/in/madhu-yadav-192255250/",
   designation: "Analyst",
